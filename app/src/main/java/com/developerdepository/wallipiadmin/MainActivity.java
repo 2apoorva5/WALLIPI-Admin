@@ -1,9 +1,5 @@
 package com.developerdepository.wallipiadmin;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -16,12 +12,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -54,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(getResources().getColor(android.R.color.white));
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
-        wallpaperRef = FirebaseFirestore.getInstance().collection("Texture");
-        storageReference = FirebaseStorage.getInstance().getReference("TextureWallpapers/");
+        wallpaperRef = FirebaseFirestore.getInstance().collection("Travel");
+        storageReference = FirebaseStorage.getInstance().getReference("TravelWallpapers/");
 
         progressDialog = new SpotsDialog.Builder().setContext(MainActivity.this)
                 .setMessage("Saving image..")
