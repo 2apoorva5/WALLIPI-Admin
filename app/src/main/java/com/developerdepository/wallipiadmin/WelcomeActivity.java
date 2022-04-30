@@ -1,8 +1,5 @@
 package com.developerdepository.wallipiadmin;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +7,8 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -41,18 +37,15 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onStart();
 
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-        if(currentUser == null) {
+        if (currentUser == null) {
             welcomeFeedback.setText("Creating Account..");
-            firebaseAuth.signInAnonymously().addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()) {
-                        welcomeFeedback.setText("Account Created!");
-                        startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-                        finish();
-                    } else {
-                        Toast.makeText(WelcomeActivity.this, "ERROR!", Toast.LENGTH_SHORT).show();
-                    }
+            firebaseAuth.signInAnonymously().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    welcomeFeedback.setText("Account Created!");
+                    startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+                    finish();
+                } else {
+                    Toast.makeText(WelcomeActivity.this, "ERROR!", Toast.LENGTH_SHORT).show();
                 }
             });
         } else {

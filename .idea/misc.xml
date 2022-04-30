@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/apoor/AndroidStudioProjects/WalLipiAdmin/app/src/main/res/layout/activity_main.xml" value="0.12545289855072464" />
+        <entry key="..\:/Users/apoor/AndroidStudioProjects/WalLipiAdmin/app/src/main/res/layout/activity_welcome.xml" value="0.21203703703703702" />
+        <entry key="..\:/Users/apoor/AndroidStudioProjects/WalLipiAdmin/app/src/main/res/layout/dialog_progress.xml" value="0.21203703703703702" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
